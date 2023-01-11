@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-nav rounded">
+    <a th:if="${!@loggedUserSession.isLoggeinIn()}" class="nav-link text-white active h5" href="/">Shopping List App</a>
+    <a th:if="${@loggedUserSession.isLoggeinIn()}" class="nav-link text-white active h5" href="/home">Shopping List App</a>
+    <a th:if="${@loggedUserSession.isLoggeinIn()}" class="nav-link text-white active h5" href="/add-product">Add Product</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+      <ul class="navbar-nav row">
+        <li th:if="${!@loggedUserSession.isLoggeinIn()}" class="nav-item col-md-4">
+          <a class="nav-link text-white active h5" href="/login">Login</a>
+        </li>
+        <li th:if="${!@loggedUserSession.isLoggeinIn()}" class="nav-item col-md-4">
+          <a class="nav-link text-white active h5" href="/register">Register</a>
+        </li>
+        <li th:if="${@loggedUserSession.isLoggeinIn()}" class="nav-item col-md-4">
+          <a class="nav-link text-white active h5" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
